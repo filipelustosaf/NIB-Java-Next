@@ -1,6 +1,6 @@
 package entities;
 
-public class Poupanca extends Contas {
+public class Poupanca extends Conta {
 
     public void renderJuros(){
         double saldoAtual = getSaldo();

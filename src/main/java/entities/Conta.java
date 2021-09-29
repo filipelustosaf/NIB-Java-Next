@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Contas {
+public class Conta {
 
     private String numero;
     private double saldo;

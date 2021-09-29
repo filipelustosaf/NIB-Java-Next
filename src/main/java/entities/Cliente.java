@@ -11,6 +11,6 @@ public class Cliente {
 
     private String cpf;
     private String nome;
-    private Contas contas;
+    private Conta contas;
 
 }
