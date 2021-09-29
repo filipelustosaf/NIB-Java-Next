@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Clientes {
+public class Cliente {
 
     private String cpf;
     private String nome;

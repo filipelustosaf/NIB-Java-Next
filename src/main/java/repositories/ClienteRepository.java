@@ -1,6 +1,6 @@
 package repositories;
 
-import entities.Clientes;
+import entities.Cliente;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ public class ClienteRepository {
 
     private static final ClienteRepository INSTANCIA = new ClienteRepository();
 
-    private List<Clientes> clientes;
+    private List<Cliente> clientes;
 
     private ClienteRepository(){
         clientes = new ArrayList<>();
@@ -19,11 +19,11 @@ public class ClienteRepository {
         return INSTANCIA;
     }
 
-    public void salvar(Clientes clientes){
+    public void salvar(Cliente clientes){
         this.clientes.add(clientes);
     }
 
-    public Clientes buscar(String cpf){
+    public Cliente buscar(String cpf){
         for (int i = 0; i < clientes.size(); i++) {
             if(clientes.get(i).getCpf().equals(cpf)){
                 return clientes.get(i);

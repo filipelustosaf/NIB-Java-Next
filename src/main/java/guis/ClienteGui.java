@@ -1,7 +1,7 @@
 package guis;
 
 
-import entities.Clientes;
+import entities.Cliente;
 import services.ClienteService;
 
 import java.util.Scanner;
@@ -51,7 +51,7 @@ public class ClienteGui {
         System.out.println("Digite o nome do Cliente");
         String nome = leTeclado.next();
 
-        Clientes clientes = new Clientes(cpf, nome, null);
+        Cliente clientes = new Cliente(cpf, nome, null);
 
         boolean clienteFoiCadastrado = clienteService.salvar(clientes);
 
@@ -66,7 +66,7 @@ public class ClienteGui {
         System.out.println("Digite o cpf");
         String cpf = leTeclado.next();
 
-        Clientes clientes = clienteService.buscar(cpf);
+        Cliente clientes = clienteService.buscar(cpf);
         if(clientes == null){
             System.out.println("Cpf não encontrado");
         }else{

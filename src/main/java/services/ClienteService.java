@@ -2,7 +2,7 @@ package services;
 
 import repositories.ClienteRepository;
 import util.CpfUtil;
-import entities.Clientes;
+import entities.Cliente;
 
 public class ClienteService {
 
@@ -12,7 +12,7 @@ public class ClienteService {
         clienteRepository = ClienteRepository.getInstancia();
     }
 
-    public boolean salvar(Clientes clientes){
+    public boolean salvar(Cliente clientes){
 
         if(!CpfUtil.isCPF(clientes.getCpf())){
             return false;
@@ -22,7 +22,7 @@ public class ClienteService {
         return true;
     }
 
-    public Clientes buscar(String cpf){
+    public Cliente buscar(String cpf){
         return clienteRepository.buscar(cpf);
     }
 
