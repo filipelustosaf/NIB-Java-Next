@@ -15,7 +15,7 @@ public class NIBMain {
         ContaGui contaGui = new ContaGui();
         contaGui.exibeMenu(leTeclado);
 
-        System.out.println("Obrigado por usar o NIB");
+        System.out.println("Obrigado por usar o NIB!");
         leTeclado.close();
     }
 }

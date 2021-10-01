@@ -40,10 +40,10 @@ public class ClienteGui {
     }
 
     private void salvar(Scanner leTeclado){
-        System.out.println("Digite o cpf do cliente");
+        System.out.print("Digite o CPF do cliente: ");
         String cpf = leTeclado.next();
 
-        System.out.println("Digite o nome do Cliente");
+        System.out.print("Digite o nome do Cliente: ");
         String nome = leTeclado.next();
 
         Cliente cliente = new Cliente(cpf, nome);
@@ -51,19 +51,19 @@ public class ClienteGui {
         boolean clienteFoiCadastrado = clienteService.salvar(cliente);
 
         if(clienteFoiCadastrado){
-            System.out.println("O cliente foi cadastrado com sucesso");
+            System.out.println("O cliente foi cadastrado com sucesso!");
         }else{
             System.out.println("Erro ao cadastrar cliente. Verifique os dados e tente novamente.");
         }
     }
 
     private void buscar(Scanner leTeclado){
-        System.out.println("Digite o cpf");
+        System.out.print("Digite o CPF: ");
         String cpf = leTeclado.next();
 
         Cliente cliente = clienteService.buscar(cpf);
         if(cliente == null){
-            System.out.println("Cpf não encontrado");
+            System.out.println("CPF não encontrado!");
         }else{
             System.out.println("Cliente: " + cliente);
         }

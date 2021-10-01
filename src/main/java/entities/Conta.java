@@ -36,5 +36,11 @@ public class Conta {
         saldo -= valor;
     }
 
-    //TODO fazer o transferir.
+    @Override
+    public String toString() {
+        return "Cliente = " + cliente +
+                ", Numero = '" + numero + '\'' +
+                ", Saldo = " + saldo;
+    }
+    //  fazer o transferir.
 }

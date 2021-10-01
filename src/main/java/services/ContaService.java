@@ -57,7 +57,9 @@ public class ContaService {
     public boolean debitar(String numero, String senha, double valor){
 
         Conta conta = getContaPorNumeroESenha(numero, senha);
-        if (conta == null) return false;
+        if (conta == null){
+            return false;
+        }
 
         if(conta.getSaldo() < valor){
             return false;

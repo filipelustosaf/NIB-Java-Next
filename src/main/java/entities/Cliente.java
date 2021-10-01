@@ -12,4 +12,9 @@ public class Cliente {
     private String cpf;
     private String nome;
 
+    @Override
+    public String toString() {
+        return "Nome = '" + nome + '\'' +
+                ", CPF = '" + cpf + '\'';
+    }
 }

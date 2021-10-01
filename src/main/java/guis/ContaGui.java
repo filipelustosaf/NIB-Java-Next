@@ -43,53 +43,53 @@ public class ContaGui {
     }
 
     private void salvar(Scanner leTeclado){
-        System.out.println("Digite o CPF do Cliente");
+        System.out.print("Digite o CPF do Cliente: ");
         String cpf = leTeclado.next();
 
-        System.out.println("Digite o valor do deposito inicial");
+        System.out.print("Digite o valor do deposito inicial: R$ ");
         double valorInicial = leTeclado.nextDouble();
 
-        System.out.println("Digite a senha");
+        System.out.print("Digite a senha: ");
         String senha = leTeclado.next();
 
-        System.out.println("Digite novamente a senha para confirmar");
+        System.out.print("Digite novamente a senha para confirmar: ");
         String confirmacaoSenha = leTeclado.next();
 
         Conta conta = contaService.salvar(cpf, valorInicial, senha, confirmacaoSenha);
 
         if(conta == null){
-            System.out.println("Erro durante abertura de conta. Por favor, tente novamente");
+            System.out.println("Erro durante abertura de conta. Por favor, tente novamente!");
         }else{
             System.out.println("Conta " + conta + " criada com sucesso.");
         }
     }
 
     private void exibirConta(Scanner leTeclado){
-        System.out.println("Digite o numero da conta");
+        System.out.print("Digite o numero da conta: ");
         String numero = leTeclado.next();
 
         Conta conta = contaService.buscar(numero);
         if(conta == null){
-            System.out.println("conta de numero " + numero + " não encontrada");
+            System.out.println("Conta de numero " + numero + " não encontrada");
         }else{
-            System.out.println("conta: " + conta);
+            System.out.println("Conta: " + conta);
         }
     }
 
     private void debitar(Scanner leTeclado){
-        System.out.println("Digite o numero da Conta");
+        System.out.print("Digite o numero da Conta: ");
         String numero = leTeclado.next();
 
-        System.out.println("Digite a senha");
+        System.out.print("Digite a senha: ");
         String senha = leTeclado.next();
 
-        System.out.println("Digite o valor");
+        System.out.print("Digite o valor: ");
         double valor = leTeclado.nextDouble();
 
         if(contaService.debitar(numero, senha, valor)) {
-            System.out.println("deu bom ");
+            System.out.println("Débito efetuado!");
         }else{
-            System.out.println("deu ruim ");
+            System.out.println("Débito não efetuado!");
         }
     }
 }
