@@ -1,6 +1,5 @@
 package guis;
 
-
 import entities.Cliente;
 import services.ClienteService;
 
@@ -14,9 +13,7 @@ public class ClienteGui {
         clienteService = new ClienteService();
     }
 
-    public void exibeMenu(){
-        Scanner leTeclado = new Scanner(System.in);
-
+    public void exibeMenu(Scanner leTeclado){
         int opcaoMenu = 0;
 
         do{
@@ -40,8 +37,6 @@ public class ClienteGui {
 
         }while (opcaoMenu != 3);
 
-        System.out.println("Obrigado por usar o NIB");
-        leTeclado.close();
     }
 
     private void salvar(Scanner leTeclado){
@@ -51,9 +46,9 @@ public class ClienteGui {
         System.out.println("Digite o nome do Cliente");
         String nome = leTeclado.next();
 
-        Cliente clientes = new Cliente(cpf, nome, null);
+        Cliente cliente = new Cliente(cpf, nome);
 
-        boolean clienteFoiCadastrado = clienteService.salvar(clientes);
+        boolean clienteFoiCadastrado = clienteService.salvar(cliente);
 
         if(clienteFoiCadastrado){
             System.out.println("O cliente foi cadastrado com sucesso");
@@ -66,11 +61,11 @@ public class ClienteGui {
         System.out.println("Digite o cpf");
         String cpf = leTeclado.next();
 
-        Cliente clientes = clienteService.buscar(cpf);
-        if(clientes == null){
+        Cliente cliente = clienteService.buscar(cpf);
+        if(cliente == null){
             System.out.println("Cpf não encontrado");
         }else{
-            System.out.println("Cliente: " + clientes);
+            System.out.println("Cliente: " + cliente);
         }
     }
 }

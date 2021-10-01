@@ -19,8 +19,8 @@ public class ClienteRepository {
         return INSTANCIA;
     }
 
-    public void salvar(Cliente clientes){
-        this.clientes.add(clientes);
+    public void salvar(Cliente cliente){
+        clientes.add(cliente);
     }
 
     public Cliente buscar(String cpf){
@@ -29,6 +29,7 @@ public class ClienteRepository {
                 return clientes.get(i);
             }
         }
+
         return null;
     }
 }

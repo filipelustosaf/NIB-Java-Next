@@ -12,13 +12,13 @@ public class ClienteService {
         clienteRepository = ClienteRepository.getInstancia();
     }
 
-    public boolean salvar(Cliente clientes){
+    public boolean salvar(Cliente cliente){
 
-        if(!CpfUtil.isCPF(clientes.getCpf())){
+        if(!CpfUtil.isCPF(cliente.getCpf())){
             return false;
         }
 
-        clienteRepository.salvar(clientes);
+        clienteRepository.salvar(cliente);
         return true;
     }
 
